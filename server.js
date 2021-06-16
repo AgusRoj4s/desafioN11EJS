@@ -12,19 +12,6 @@ app.use('/api/', routes());
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
-app.get('/', (req, res) => {
-    let prod = productos.listar();
-    console.log(prod);
-    res.render('form', { prod: prod });
-});
-
-app.post('/datos', (req, res) => {
-    productController.saveProduct(req, res);
-    let prod = productos.listar();
-    res.render('formulario', { prod: prod });
-});
-
-
 // pongo a escuchar el servidor en el puerto indicado
 const puerto = 8080;
 const server = app.listen(puerto, () => {

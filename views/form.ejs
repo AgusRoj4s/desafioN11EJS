@@ -8,6 +8,7 @@
                     <th>Price</th>
                     <th>Thumbnail</th>
                 </tr>
+                <% if (prod.length > 0 ){%>   
                 <%prod.forEach(function(prod) {%>
                     <tr>
                         <td>
@@ -17,14 +18,14 @@
                             <%=prod.price%>
                         </td>
                         <td>
-                            <%=prod.thumbnail%>
+                            <img width="50" src= <%=prod.thumbnail %> alt="not found">
                         </td>
                     </tr>
                     <%});%>
+                <% }else{%>
+                    <h3 class="alert alert-danger">no se encontraron datos</h1>
+                <%}%>
             </table>
-
-            <h3 class="alert alert-danger">no se encontraron datos</h1>
-
         </div>
     </body>
 

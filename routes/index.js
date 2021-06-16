@@ -5,14 +5,11 @@ const productos = require('../api/productos');
 
 
 module.exports = () => {
-
-
-
-    /*router.get('/productos/vista', (req, res) => {
+    router.get('/productos/vista', (req, res) => {
         let prod = productos.listar();
-        if (prod == 0) res.render('main', { productos: productos.listar(), hayProductos: false });
-        else res.render('main', { productos: productos.listar(), hayProductos: true });
-    });*/
+        console.log(prod);
+        res.render('form', { prod });
+    });
 
     router.get('/productos/listar', productController.getProducts);
     router.get('/productos/listar/:id', productController.getOneProduct);
