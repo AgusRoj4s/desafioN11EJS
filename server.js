@@ -11,6 +11,7 @@ app.use('/api/', routes());
 
 app.set('view engine', 'ejs');
 app.set('views', './views');
+app.use(express.static('public'));
 
 // pongo a escuchar el servidor en el puerto indicado
 const puerto = 8080;
